@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        #nav {
+            background-color: rgb(255, 255, 255);
+            color: #000;
+        }
+
+        #navsub {
+            color: #000;
+            font-weight: bold;
+            background-color: orange;
+            /* max-width: 100%; */
+        }
+
+        #navsub1 {
+            color: #000;
+            font-weight: bold;
+            background-color: orange;
+        }
+
+        /* ---------------animation1------------------------- */
+        #spinner1 {
+            fill: rgb(9, 9, 9);
+            transform-origin: 50% 50%;
+            transform: rotateZ(50deg);
+            animation: rotate 6s infinite linear;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateZ(0deg);
+            }
+
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        #curve {
+            fill: transparent;
+        }
+
+        /* ---------------animation1------------------------- */
+  
+        .box {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: linear-gradient(to right, rgb(255, 255, 255) 50%, orange 50%);
+            transform: rotate(45deg);
+            transition: 1.5s;
+            animation: rotate2 1.5s infinite linear alternate;
+        }
+
+        @keyframes rotate2 {
+            from {
+                transform: rotate(125deg);
+            }
+
+            to {
+                transform: rotate(45deg);
+            }
+        }
+        /* ---------------animation1-  responsive------------------------ */
+        .box1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(to right, rgb(255, 255, 255) 50%, orange 50%);
+            transform: rotate(45deg);
+            transition: 1.5s;
+            animation: rotate2 1.5s infinite linear alternate;
+        }
+
+        @keyframes rotate2 {
+            from {
+                transform: rotate(125deg);
+            }
+
+            to {
+                transform: rotate(45deg);
+            }
+        }
+
+
+        #navsub2 {
+            background-color: black;
+            color: orange;
+        }
+
+        #nav-link3 {
+            color: #000;
+            border: 1px solid black;
+            border-radius: 30px;
+            padding: 8px 15px;
+        }
+
+        #nav-link {
+            font-size: 20px;
+        }
+
+        #nav-link3:hover {
+            background-color: black;
+            color: white;
+
+        }
+
+        #container {
+            max-width: 1800px;
+        }
+
+        #course {
+            width: 200px;
+            height: 80px;
+            border-radius: 40px;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            box-shadow: 0 0 10px black;
+            margin-left:70% ;
+            
+        }
+
+        @keyframes example {
+            0% {
+                top: 0px;
+            }
+
+            50% {
+                top: 200px;
+            }
+
+            100% {
+                top: 0px;
+            }
+        }
+
+        #course1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: orange;
+
+        }
+        #course2 {
+            font-weight: bold;
+            font-size: 40px;
+            color: orange;
+        }
+        #best{
+            font-weight: bold;
+            font-size: 40px;
+            margin-top: 40%;
+        }
+        #course_responsive{ 
+            width: 100px;
+            height: 50px;
+            border-radius: 40px;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            box-shadow: 0 0 10px black;
+            margin-left:70% ;
+            
+        }
+        #course1_responsive {
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            color: orange;
+
+        }
+        #course2_responsive {
+            font-weight: bold;
+            font-size: 15px;
+            color: orange;
+        }
+        #student{
+            position: relative;
+            font-size: 20px;
+            margin-top: 38%;
+            margin-left: 12%;
+        }
+        #student_responsive{
+            position: relative;
+            font-size: 15px;
+            padding-top: 18%;
+            margin-left: 11%;
+        }
+        #best1{
+            margin-top: 13px;
+            color: #a09a9a;
+            font-size: 16px;
+        }
+        #best2{ 
+            color: #555353;
+            font-size: 16px;
+            border: 1px solid #000000;
+            border-radius: 30px;
+            padding: 8px 20px;
+            text-decoration: none;
+            width: 150px;
+            display: block;   
+            margin-top: 30px;
+            margin-left: 40%;
+            
+        }
+        #best2:hover{
+            background-color: black;
+            color: white;
+        }
+        #demo{
+            max-width: 70%;
+        }
+        @media (max-width: 768px) {
+            .left-side {
+                top:-10% ;
+            }
+        }
+        @media (max-width: 768px) {
+            .left-side {
+                top:-10% ;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            #demo{
+                padding-top: 200px;
+            }
+            
+        }
+  
+    </style>
+    </head>
+
+    <body>
+        <nav id="navsub" class="d-flex justify-content-between d-lg-block">
+            <ul class="nav  " style="padding-left: 14%;">
+                <li class="nav-item ">
+                    <a id="navsub1" class="nav-link" href="#">+91 7736013411</a>
+                </li>
+
+                <li class="nav-item" style="padding-left: 52%;">
+                    <a id="navsub1" class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a id="navsub1" class="nav-link" href="#">Careers</a>
+                </li>
+                <li class="nav-item">
+                    <a id="navsub1" class="nav-link" href="#">Success Stories</a>
+                </li>
+                <li class="nav-item">
+                    <a id="navsub2" class="nav-link" href="#">Register Now</a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav id="nav" class="navbar navbar-expand-lg mt-3">
+            <div class="container" id="container">
+                <a class="navbar-brand" href="#"><img src="{% static '/images/synnefo-logo.png' %}" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto" style="column-gap: 20px; padding-left: 54%;">
+                        <li class="nav-item" style="padding-left: 0%;">
+                            <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="nav-link" class="nav-link" href="#">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="nav-link" class="nav-link" href="#">Placement</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="nav-link3" class="nav-link" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        </nav>
+
+
+
+
+
+        <div class="container d-flex flex-column flex-md-row">
+            <div class="left-side col-12 col-md-6 order-2 order-md-1">
+                <!-- Left side content -->
+
+                <h1 id="best">The Best <br>
+                    Learning Platform</h1>
+                <h5 id="best1" >Our expert trainers can help you learn bleeding-edge technologies, so you can gain the experience you need to be successful.</h5>
+
+                <a id="best2"  href="#">View Courses</a>
+                <!-- --------------spinner---------------------------------------- -->
+                <div style="padding-left:70%; " class="d-none d-md-block">
+                    <svg id="spinner" width="155" height="258">
+                        <path id="curve" d="M 25 125 A 50 50 0 1 1 25 126"></path>
+                        <text id="spinner1" class="text">
+                            <textPath href="#curve">
+                                Learn Course from Synnefo Solutions.
+                            </textPath>
+                        </text>
+                        <image href="{% static '/images/icon1.jpg' %}" x="30" y="97" height="50" width="100" />
+                    </svg>
+                </div>
+            </div>
+            <div id="right-side" class="right-side col-12 col-md-6 order-1 order-md-2 d-none d-md-block">
+                <!-- Right side content -->
+                <!-- ---------------animation1------------------------- -->
+                <div id="animation1" style="position: relative;">
+                    <div id="box" class="box" style="position: absolute; top: 87px; left: 65px;"></div>
+                    <img src="{% static '/images/syneffo1.webp' %}" alt="" srcset="" style="position: absolute; top: 0; left: 0;">
+
+                </div>
+                <div id="student">
+                    <img src="{% static '/images/student.png' %}" alt=""><b>3000+ <br>  Students Trusted</b>
+                </div>
+                <div id="course">
+                    <p id="course1" ><i id="course2" class="fa-solid fa-laptop-code "></i>&nbsp; &nbsp;20+ <br> Courses</p>
+                </div>
+            </div>
+  
+        </div>
+        <div id="right-side" class="right-side col-12 col-md-6 order-1 order-md-2 d-block d-md-none">
+            <!-- Small screen  -->
+            <!-- ---------------animation1------------------------- -->
+            <div id="animation1" style="position: relative;">
+                <div id="box1" class="box" style="height: 350px; width: 350px; position: absolute; top: 0px; left: 0;"></div>
+                <img src="{% static '/images/syneffo1.webp' %}" class="" alt="" srcset="" style="height: 350px; width: 350px; position: absolute; top: 0; left: 0px;">
+
+            </div>
+            <div id="student_responsive">
+                <img src="{% static '/images/student.png' %}" alt=""><b>3000+ <br>  Students Trusted</b>
+            </div>
+            <div id="course_responsive">
+                <p id="course1_responsive" ><i id="course2_responsive" class="fa-solid fa-laptop-code "></i>&nbsp; &nbsp;20+ <br> Courses</p>
+            </div>
+        </div>
+
+<!-- -------------------------------------------------------------------------- -->
+
+
+<div id="demo" class=" container slide mt-5 mb-5" data-bs-ride="carousel" data-bs-interval="2500"> 
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div style="display:flex; flex-wrap:wrap">
+        <img src="{% static '/images/cert.jpg' %}" alt="Los Angeles" class="d-block" style="width:25% ;height:100px">
+        <img src="{% static '/images/cert1.jpg' %}" alt="Los Angeles" class="d-block" style="width:25% ;height:100px">
+        <img src="{% static '/images/cert2.jpg' %}" alt="Los Angeles" class="d-block" style="width:25% ;height:100px">
+        <img src="{% static '/images/cert3.jpg' %}" alt="Los Angeles" class="d-block" style="width:25% ;height:100px">
+      </div>
+    </div>
+    <div class="carousel-item">
+        <div style="display:flex; flex-wrap:wrap">
+            <img src="{% static '/images/cert5.png' %}" alt="Los Angeles" class="d-block" style="width:25% ;height:100px">
+            <img src="{% static '/images/cert6.jpg' %}" alt="Los Angeles" class="d-block" style="width:25% ;height:100px">
+            <img src="{% static '/images/certi7.jpg' %}" alt="Los Angeles" class="d-block" style="width:25% ;height:100px">
+            <img src="{% static '/images/cert4.jpg' %}" alt="Los Angeles" class="d-block" style="width:25% ;height:100px">
+          </div>
+  
+  </div>
+</div>
+
+
+<div id="demo1" class="carousel slide mt-4" data-bs-ride="carousel">
+    <h1 id="popular" class="text-center mt-5">Popular Courses</h1>
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo1" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo1" data-bs-slide-to="2"></button>
+    </div>
+    
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static '/images/new-image.png' %}" alt="Alternate Text" class="d-block" style="width:100%">
+        <div class="carousel-caption">
+          <h5>Image Name</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static '/images/syneffo1.webp' %}" alt="Chicago" class="d-block" style="width:100%">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static '/images/certi7.jpg' %}" alt="New York" class="d-block" style="width:100%">
+      </div>
+    </div>
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+
+
+    </body>
+
+</html>
