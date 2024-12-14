@@ -102,7 +102,7 @@
             color: orange;
         }
 
-        #nav-link3 {
+        #navlink3 {
             color: #000;
             border: 1px solid black;
             border-radius: 30px;
@@ -113,7 +113,7 @@
             font-size: 20px;
         }
 
-        #nav-link3:hover {
+        #navlink3:hover {
             background-color: black;
             color: white;
 
@@ -232,6 +232,8 @@
             display: block;
             margin-top: 30px;
             margin-left: 40%;
+            transition: all 0.5s ease-in-out;
+
 
         }
 
@@ -253,17 +255,19 @@
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
         }
-        .carousel-indicators{
-            padding-top: 20%;
-        }
-        #dot{
+
+       
+
+        #dot {
             height: 10px;
             width: 10px;
             background-color: orange;
             border-radius: 50%;
             display: inline-block;
         }
-        #explore{
+     
+
+        #explore {
             border: 1px solid rgb(68, 67, 67);
             border-radius: 30px;
             padding: 8px 20px;
@@ -272,16 +276,56 @@
             margin-top: 30px;
             margin-left: 35%;
         }
-        #explore1{
-            border-radius:20px ;
+
+        #explore1 {
+            border-radius: 20px;
             margin-left: 5%;
+            transition: all 0.5s ease-in-out;
+
         }
-        #explore1:hover{
+
+        #explore1:hover {
             background-color: orange;
             color: #000;
         }
-        #exp{
+
+        #exp {
             background-color: orange;
+        }
+        #card1 {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #card2 {
+            transition: transform 0.3s ease-in-out;
+        }
+        #card1:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #card2:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #review {
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid orange;
+            color: orange;
+            border-radius: 30px;
+            padding: 8px 10px;
+            transition: all 0.5s ease-in-out;
+            height: 40px;
+            width: 190px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        #review:hover {
+            background-color: orange;
+            color: white;
         }
 
         @media (max-width: 768px) {
@@ -336,7 +380,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto" style="column-gap: 20px; padding-left: 54%;">
+                    <ul class="navbar-nav me-auto  mb-lg-0 ms-auto" style="column-gap: 20px; padding-left: 54%;">
                         <li class="nav-item" style="padding-left: 0%;">
                             <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
                         </li>
@@ -347,13 +391,11 @@
                             <a id="nav-link" class="nav-link" href="#">Placement</a>
                         </li>
                         <li class="nav-item">
-                            <a id="nav-link3" class="nav-link" href="#">Contact Us</a>
+                            <a id="navlink3" class="nav-link" href="#">Contact Us</a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-
         </nav>
 
 
@@ -461,58 +503,61 @@
             </div>
 
             <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
                 <span class="carousel-control-next-icon"></span>
-            </button>
+            </button> -->
         </div>
 
 
-            <div id="demo1" class="carousel slide mt-4" data-bs-ride="carousel">
-                <h1 id="popular" class="text-center mt-5 mb-3">Popular Courses</h1>
+        <div id="demo1" class="carousel slide mt-4" data-bs-ride="carousel">
+            <h1 id="popular" class="text-center mt-5 mb-3">Popular Courses</h1>
 
-                <div class="carousel-inner mb-5">
-                    <div class="carousel-item active">
-                        <div class="featured-courses d-flex flex-wrap justify-content-center">
-                            {% for course in course %}
-                            <div class="card m-2" style="width: 100%; max-width: 300px;">
-                                <img src="{{ course.img.url }}" class="card-img-top" alt="{{ course.name }}" style="height: 150px; width: 100%;">
-                                <div class="card-body">
-                                    <h5 class="card-title" style="text-align: center;">{{ course.name }}</h5>
-                                </div>
+            <div class="carousel-inner mt-4 mb-5">
+                <div class="carousel-item active">
+                    <div class="featured-courses d-flex flex-wrap justify-content-center">
+                        {% for course in course %}
+                        <div id="card1" class="card m-2" style="width: 100%; max-width: 300px;">
+                            <img src="{{ course.img.url }}" class="card-img-top" alt="{{ course.name }}"
+                                style="height: 150px; width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">{{ course.name }}</h5>
                             </div>
-                            {% endfor %}
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="featured-courses d-flex flex-wrap justify-content-center">
-                            {% for i in course1 %}
-                            <div class="card m-2" style="width: 100%; max-width: 300px;">
-                                <img src="{{ i.img.url }}" class="card-img-top" alt="{{ i.name }}" style="height: 150px; width: 100%;">
-                                <div class="card-body">
-                                    <h5 class="card-title" style="text-align: center;">{{ i.name }}</h5>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                
+                <div class="carousel-item">
+                    <div class="featured-courses d-flex flex-wrap justify-content-center">
+                        {% for i in course1 %}
+                        <div id="card2" class="card m-2" style="width: 100%; max-width: 300px;">
 
-                <div class="carousel-indicators mt-5">
-                    <button type="button" id="dot" data-bs-target="#demo1" data-bs-slide-to="0" class="active" ></button>
-                    <button type="button" id="dot" data-bs-target="#demo1" data-bs-slide-to="1" ></button>
+                            <img src="{{ i.img.url }}" class="card-img-top" alt="{{ i.name }}"
+                                style="height: 150px; width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">{{ i.name }}</h5>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
             </div>
+
+
+            <div id="maindot" class="carousel-indicators ">
+                <button type="button" id="dot" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
+                <button type="button" id="dot" data-bs-target="#demo1" data-bs-slide-to="1"></button>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
 
         <div id="explore" class="text-center d-flex align-items-center justify-content-center mb-5">
             <h1 class="m-0">20+</h1>
@@ -520,13 +565,58 @@
             <a href="#" id="explore1" class="btn btn-dark ml-3">Explore all courses</a>
         </div>
 
-        <div id="exp">
+        <div id="exp" class="mb-5">
             <div class="container">
-                dsf
+                <div class="row">
+                    <div class="col d-flex align-items-center p-3">
+                        <img src="{% static '/images/exp1.png' %}" alt="">
+                        <h1>6+</h1>
+                        <h6>Years of legacy</h6>
+                    </div>
+
+                    <hr style="transform: rotate(90deg); width: 70px;">
+                    
+                    <div class="col d-flex align-items-center p-3">
+                        <img src="{% static '/images/exp2.png' %}" alt="">
+                        <h1>20+</h1>
+                        <h6>Courses</h6>
+                    </div>
+
+                    <hr style="transform: rotate(90deg); width: 70px;">
+
+                    <div class="col d-flex align-items-center p-3">
+                        <img src="{% static '/images/exp3.png' %}" alt="">
+                        <h1>3k+</h1>
+                        <h6>Students Trusted</h6>
+                    </div>
+
+                    <hr style="transform: rotate(90deg); width: 70px;">
+
+                    <div class="col d-flex align-items-center p-3">
+                        <img src="{% static '/images/exp4.png' %}" alt="">
+                        <h1>2.5k+</h1>
+                        <h6>Placements</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------- -->
+
+        <div class="container mt-4 mb-3">
+            <div class="row">
+                <div class="col">
+                    <h1 class="mt-4 mb-3">What people say about us</h1>
+                </div>
+                <div class="col d-flex justify-content-end ">
+                    <img src="{% static '/images/google.png' %}" alt="">
+                    <a id="review" class="gap-4" href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x3b0873b4e3c340f7:0x8a02fcaf9e2dfb44!12e1?source=g.page.m.kd._&laa=lu-desktop-review-solicitation">
+                        Write a review
+                    </a>
+                </div>
             </div>
         </div>
 
 
     </body>
-
 </html>
