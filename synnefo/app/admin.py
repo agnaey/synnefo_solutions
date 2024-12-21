@@ -6,4 +6,5 @@ from .models import *
 admin.site.register(Courses)
 admin.site.register(Contact)
 admin.site.register(Placement)
+admin.site.register(Review)
 

@@ -328,6 +328,41 @@
             color: white;
         }
 
+                    .review-card {
+                        border: 1px solid #ddd;
+                        border-radius: 10px;
+                        background-color: #fff;
+                    }
+                
+                    .review-rating {
+                        font-size: 1.2rem;
+                        color: #f4c542;
+                    }
+                
+                    .review-profile img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                
+                    .review-profile h6 {
+                        font-size: 1rem;
+                        font-weight: bold;
+                    }
+                
+                    .carousel-indicators {
+                        position: relative;
+                        bottom: -10px;
+                        margin: 0;
+                        padding: 0
+                    }
+                    #say{
+                        font-family: 60px;
+                        font-family: 'Roboto', 'Christian Robertson';
+                    }
+                    #cou{
+                        text-decoration: none;
+                    }
+
         @media (max-width: 768px) {
             .left-side {
                 top: -10%;
@@ -385,7 +420,7 @@
                             <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a id="nav-link" class="nav-link" href="#">Courses</a>
+                            <a id="nav-link" class="nav-link" href="course">Courses</a>
                         </li>
                         <li class="nav-item">
                             <a id="nav-link" class="nav-link" href="#">Placement</a>
@@ -520,11 +555,14 @@
                     <div class="featured-courses d-flex flex-wrap justify-content-center">
                         {% for course in course %}
                         <div id="card1" class="card m-2" style="width: 100%; max-width: 300px;">
-                            <img src="{{ course.img.url }}" class="card-img-top" alt="{{ course.name }}"
+                            <a id="cou" href="#">
+                                <img src="{{ course.img.url }}" class="card-img-top" alt="{{ course.name }}"
                                 style="height: 150px; width: 100%;">
                             <div class="card-body">
-                                <h5 class="card-title" style="text-align: center;">{{ course.name }}</h5>
+                                <h5 class="card-title text-black" style="text-decoration: none; text-align: center;">{{ course.name }}</h5>
                             </div>
+                            </a>
+                           
                         </div>
                         {% endfor %}
                     </div>
@@ -533,12 +571,15 @@
                     <div class="featured-courses d-flex flex-wrap justify-content-center">
                         {% for i in course1 %}
                         <div id="card2" class="card m-2" style="width: 100%; max-width: 300px;">
-
-                            <img src="{{ i.img.url }}" class="card-img-top" alt="{{ i.name }}"
+                            <a id="cou" href="#">
+                                <img src="{{ i.img.url }}" class="card-img-top" alt="{{ i.name }}"
                                 style="height: 150px; width: 100%;">
                             <div class="card-body">
-                                <h5 class="card-title" style="text-align: center;">{{ i.name }}</h5>
+                                <h5 id="cou1" class="card-title text-black" style="text-align: center;">{{ i.name }}</h5>
                             </div>
+                            </a>
+
+                          
                         </div>
                         {% endfor %}
                     </div>
@@ -606,13 +647,77 @@
         <div class="container mt-4 mb-3">
             <div class="row">
                 <div class="col">
-                    <h1 class="mt-4 mb-3">What people say about us</h1>
+                    <h1 id="say" class="mt-4 mb-3">What people say</h1>
                 </div>
                 <div class="col d-flex justify-content-end ">
                     <img src="{% static '/images/google.png' %}" alt="">
                     <a id="review" class="gap-4" href="https://www.google.com/maps/place//data=!4m3!3m2!1s0x3b0873b4e3c340f7:0x8a02fcaf9e2dfb44!12e1?source=g.page.m.kd._&laa=lu-desktop-review-solicitation">
                         Write a review
                     </a>
+                </div>
+                <div id="demo2" class="carousel slide mt-4" data-bs-ride="carousel">
+                    <div class="carousel-inner mt-4 mb-5">
+                        <div class="carousel-item active">
+                            <div class="row g-3 justify-content-center">
+                                {% for review in reviews %}
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    <div class="card review-card text-center p-3">
+                                        <div class="review-rating mb-2">
+                                            ★★★★☆
+                                        </div>
+                                        <p class="card-text">{{ review.reviews }}</p>
+                                        <hr>
+
+                                        <div class="review-profile d-flex align-items-center justify-content-center mt-3">
+                                            <h6 class="mb-0">{{ review.name }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row g-3 justify-content-center">
+                                {% for review in reviews1 %}
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    <div class="card review-card text-center p-3">
+                                        <div class="review-rating mb-2">
+                                            ★★★☆☆
+                                        </div>
+                                        <p class="card-text">{{ review.reviews }}</p>
+                                        <hr>
+
+                                        <div class="review-profile d-flex align-items-center justify-content-center mt-3">
+                                            <h6 class="mb-0">{{ review.name }}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo2" data-bs-slide-to="1"></button>
+                    </div>
+                </div>
+                
+
+                
+                
+                
+                        
+                    <div id="maindot" class="carousel-indicators ">
+                        <button type="button" id="dot" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" id="dot" data-bs-target="#demo2" data-bs-slide-to="1"></button>
+                    </div>
+                        
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
                 </div>
             </div>
         </div>

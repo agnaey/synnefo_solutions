@@ -20,3 +20,7 @@ class Placement(models.Model):
     course_name=models.TextField()
     img=models.FileField()
     company=models.TextField()
+
+class Review(models.Model):
+    name=models.TextField()
+    reviews=models.TextField()
