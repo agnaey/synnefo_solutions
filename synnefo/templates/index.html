@@ -420,10 +420,10 @@
                             <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a id="nav-link" class="nav-link" href="course">Courses</a>
+                            <a id="nav-link" class="nav-link" href="../course">Courses</a>
                         </li>
                         <li class="nav-item">
-                            <a id="nav-link" class="nav-link" href="#">Placement</a>
+                            <a id="nav-link" class="nav-link" href="../placement">Placement</a>
                         </li>
                         <li class="nav-item">
                             <a id="navlink3" class="nav-link" href="#">Contact Us</a>
@@ -446,7 +446,7 @@
                 <h5 id="best1">Our expert trainers can help you learn bleeding-edge technologies, so you can gain the
                     experience you need to be successful.</h5>
 
-                <a id="best2" href="#">View Courses</a>
+                <a id="best2" href="course">View Courses</a>
                 <!-- --------------spinner---------------------------------------- -->
                 <div style="padding-left:70%; " class="d-none d-md-block">
                     <svg id="spinner" width="155" height="258">
@@ -555,7 +555,7 @@
                     <div class="featured-courses d-flex flex-wrap justify-content-center">
                         {% for course in course %}
                         <div id="card1" class="card m-2" style="width: 100%; max-width: 300px;">
-                            <a id="cou" href="#">
+                            <a id="cou" href="view_course/{{ course.id }}">
                                 <img src="{{ course.img.url }}" class="card-img-top" alt="{{ course.name }}"
                                 style="height: 150px; width: 100%;">
                             <div class="card-body">
@@ -571,7 +571,7 @@
                     <div class="featured-courses d-flex flex-wrap justify-content-center">
                         {% for i in course1 %}
                         <div id="card2" class="card m-2" style="width: 100%; max-width: 300px;">
-                            <a id="cou" href="#">
+                            <a id="cou" href="view_course/{{ i.id }}">
                                 <img src="{{ i.img.url }}" class="card-img-top" alt="{{ i.name }}"
                                 style="height: 150px; width: 100%;">
                             <div class="card-body">
@@ -701,12 +701,6 @@
                         <button type="button" data-bs-target="#demo2" data-bs-slide-to="1"></button>
                     </div>
                 </div>
-                
-
-                
-                
-                
-                        
                     <div id="maindot" class="carousel-indicators ">
                         <button type="button" id="dot" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
                         <button type="button" id="dot" data-bs-target="#demo2" data-bs-slide-to="1"></button>

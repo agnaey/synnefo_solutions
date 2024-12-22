@@ -59,6 +59,63 @@
             font-family: 'Roboto', 'Christian Robertson';
 
         }
+        #courseimg{
+            border-radius: 20px;
+            width: 100%;
+            max-width: 550px;
+        }
+        .enquire{
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 3px solid orange;
+        }
+        #enquireheading{
+    font-weight: bold;
+    font-size: 30px;
+        }
+#btn{
+    background-color: orange;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+}
+#card1 {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+#card1 img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#card1 h5 {
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#card1 p {
+    color: gray;
+    margin: 5px 0;
+}
+
+#card1 hr {
+    border: 1px dashed #ddd;
+    margin: 10px 0;
+}
+
     </style>
 
     <!-- <nav id="navsub" class="d-flex justify-content-between d-lg-block">
@@ -96,10 +153,10 @@
                         <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link" href="">Courses</a>
+                        <a id="nav-link" class="nav-link" href="../course">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link" href="../placement">Placement</a>
+                        <a id="nav-link" class="nav-link" href="#">Placement</a>
                     </li>
                     <li class="nav-item">
                         <a id="navlink3" class="nav-link" href="#">Contact Us</a>
@@ -108,26 +165,38 @@
             </div>
         </div>
     </nav>
-    <h1 id="heding" class="text-center mb-5">Courses</h1>
+    <h1 id="heding" class="text-center mb-5">Placement</h1>
 
-<div class="container">
+    <div class="container">
     
-    <div class="row  row-cols-1 row-cols-md-4 g-4 featured-courses d-flex flex-wrap justify-content-center">
-        {% for course in course %}
-        <div id="card1" class="col card m-2 mb-4" style="width: 100%; max-width: 300px;">
-            <a id="cou" href="view_course/{{ course.id }}">
-                <img id="img1" src="{{ course.img.url }}" class="card-img-top" alt="{{ course.name }}"
-                    style="height: 220px; width: 100%;">
-                <div class="card-body">
-                    <h5 class="card-title text-black" style="text-decoration: none; text-align: center;">{{ course.name}}</h5>
+        <div id="demo1" class="carousel slide mt-4" data-bs-ride="carousel">
+
+            <div class="carousel-inner mt-4 mb-5">
+                    <div class="featured-courses d-flex flex-wrap justify-content-center">
+                        {% for plac in placement %}
+                        <div id="card1" class="card text-center m-2" style="width: 100%; max-width: 300px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                            <div class="card-body">
+                                <div style="width: 80px; height: 80px; margin: 0 auto; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
+                                    <a href="{{ plac.profile_link|default:'#' }}" target="_blank"></a>
+                                </div>
+                                <h5 class="card-title text-black mt-3 mb-1" style="font-weight: bold;">{{ plac.name }}</h5>
+                                <p class="mb-2" style="color: gray;">{{ plac.designation }}</p>
+                                <hr style="border: 1px dashed #b2b1b1;">
+                                <p class="mb-0" style="font-weight: bold;">Placed in</p>
+                                <p style="font-weight: bold;">{{ plac.company|default:"" }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
                 </div>
-            </a>
-        
+            </div>
         </div>
-        {% endfor %}
-    </div>
-</div>
+
+
+
+
+
 
 </body>
-
 </html>

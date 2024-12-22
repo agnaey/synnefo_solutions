@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        #nav {
+            background-color: rgb(255, 255, 255);
+            color: #000;
+        }
+
+        #navsub {
+            color: #000;
+            font-weight: bold;
+            background-color: orange;
+            /* max-width: 100%; */
+        }
+
+        #navsub1 {
+            color: #000;
+            font-weight: bold;
+            background-color: orange;
+        }
+
+        #cou {
+            text-decoration: none;
+        }
+
+        #card1 {
+            padding: 0;
+            transition: transform 0.3s ease-in-out;
+
+        }
+        #card1:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card {
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card-img-top {
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        #heding{
+            font-size: 70px;
+            margin-bottom: 10%;
+            font-family: 'Roboto', 'Christian Robertson';
+
+        }
+        #courseimg{
+            border-radius: 20px;
+            width: 100%;
+            max-width: 550px;
+        }
+        .enquire{
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 3px solid orange;
+        }
+        #enquireheading{
+    font-weight: bold;
+    font-size: 30px;
+        }
+#btn{
+    background-color: orange;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+}
+#card1 {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+#card1 img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#card1 h5 {
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#card1 p {
+    color: gray;
+    margin: 5px 0;
+}
+
+#card1 hr {
+    border: 1px dashed #ddd;
+    margin: 10px 0;
+}
+
+    </style>
+
+    <!-- <nav id="navsub" class="d-flex justify-content-between d-lg-block">
+        <ul class="nav  " style="padding-left: 14%;">
+            <li class="nav-item ">
+                <a id="navsub1" class="nav-link" href="#">+91 7736013411</a>
+            </li>
+
+            <li class="nav-item" style="padding-left: 52%;">
+                <a id="navsub1" class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a id="navsub1" class="nav-link" href="#">Careers</a>
+            </li>
+            <li class="nav-item">
+                <a id="navsub1" class="nav-link" href="#">Success Stories</a>
+            </li>
+            <li class="nav-item">
+                <a id="navsub2" class="nav-link" href="#">Register Now</a>
+            </li>
+        </ul>
+    </nav> -->
+
+    <nav id="nav" class="navbar navbar-expand-lg mt-3 mb-5">
+        <div class="container" id="container">
+            <a class="navbar-brand" href="../"><img src="{% static '/images/synnefo-logo.png' %}" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto  mb-lg-0 ms-auto" style="column-gap: 20px; padding-left: 54%;">
+                    <li class="nav-item" style="padding-left: 0%;">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link" href="../course">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link" href="../placement">Placement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="navlink3" class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1 id="heding" class="text-center mb-5">Courses</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 pr-lg-5">
+                <h3>{{ course.name }}</h3>
+                <p class="lead">{{ course.description|linebreaks }}</p>
+            </div>
+            <div class="col-lg-5 pl-lg-5 mb-5">
+                <img src="{{ course.img.url }}" id="courseimg" class="img-fluid mb-4" alt="{{ course.name }}">
+                <div class="enquire">
+                    <h4 id="enquireheading">Enquire</h4>
+                    <p class="enquire-text">
+                        Please fill out the form below and we will get <br>
+                        back to you shortly.
+                    </p>
+                    <form>
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" id="phone" placeholder="Phone">
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" id="course" placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" id="btn">Submit</button>
+
+
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <h1 class="text-center">Placements</h1>
+        <p class="text-center">Congratulations to our successful students who have secured placements in top-notch companies!</p>
+        <div id="demo1" class="carousel slide mt-4" data-bs-ride="carousel">
+
+            <div class="carousel-inner mt-4 mb-5">
+                <div class="carousel-item active">
+                    <div class="featured-courses d-flex flex-wrap justify-content-center">
+                        {% for plac in placement %}
+                        <div id="card1" class="card text-center m-2" style="width: 100%; max-width: 300px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                            <div class="card-body">
+                                <div style="width: 80px; height: 80px; margin: 0 auto; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
+                                    <a href="{{ plac.profile_link|default:'#' }}" target="_blank"></a>
+                                </div>
+                                <h5 class="card-title text-black mt-3 mb-1" style="font-weight: bold;">{{ plac.name }}</h5>
+                                <p class="mb-2" style="color: gray;">{{ plac.designation }}</p>
+                                <hr style="border: 1px dashed #9a9a9a;">
+                                <p class="mb-0" style="font-weight: bold;">Placed in</p>
+                                <p style="font-weight: bold;">{{ plac.company|default:"" }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+                <div class="carousel-item">
+                    <div class="featured-courses d-flex flex-wrap justify-content-center">
+                        {% for plac in placement %}
+                        <div id="card1" class="card text-center m-2" style="width: 100%; max-width: 300px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                            <div class="card-body">
+                                <div style="width: 80px; height: 80px; margin: 0 auto; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
+                                    <a href="" ></a>
+                                </div>
+                                <h5 class="card-title text-black mt-3 mb-1" style="font-weight: bold;">{{ plac.name }}</h5>
+                                <p class="mb-2" style="color: gray;">{{ plac.designation }}</p>
+                                <hr style="border: 1px dashed #a3a2a2;">
+                                <p class="mb-0" style="font-weight: bold;">Placed in</p>
+                                <p style="font-weight: bold;">{{ plac.company|default:"" }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                </div>
+            </div>
+
+
+            <div id="maindot" class="carousel-indicators ">
+                <button type="button" id="dot" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
+                <button type="button" id="dot" data-bs-target="#demo1" data-bs-slide-to="1"></button>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+</html>
