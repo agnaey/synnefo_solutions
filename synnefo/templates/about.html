@@ -40,6 +40,7 @@
             transition: transform 0.3s ease-in-out;
 
         }
+
         #card1:hover {
             transform: scale(1.05);
             transition: transform 0.3s ease-in-out;
@@ -49,75 +50,63 @@
             border-radius: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         .card-img-top {
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
         }
-        #heding{
+
+        #heding {
             font-size: 70px;
             margin-bottom: 10%;
             font-family: 'Roboto', 'Christian Robertson';
 
         }
-        #courseimg{
+
+        #courseimg {
             border-radius: 20px;
             width: 100%;
             max-width: 550px;
         }
-        .enquire{
+
+        .enquire {
             border-radius: 20px;
             padding: 20px;
-            text-align: center;
-            border: 3px solid orange;
         }
-        #enquireheading{
-    font-weight: bold;
-    font-size: 30px;
+
+        #enquireheading {
+            font-weight: bold;
+            font-size: 30px;
         }
-#btn{
-    background-color: orange;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 10px;
-    width: 100%;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 10px;
-}
-#card1 {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    text-align: center;
-}
 
-#card1 img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+        #btn {
+            color: rgb(0, 0, 0);
+            margin-left: 30%;
 
-#card1 h5 {
-    font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
+            justify-content: center;
+            border-radius: 50px;
+            width: 300px;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+        }
 
-#card1 p {
-    color: gray;
-    margin: 5px 0;
-}
+        #btn:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+        }
 
-#card1 hr {
-    border: 1px dashed #ddd;
-    margin: 10px 0;
-}
-#message{
-    height: 130px;
-}
+        #message {
+            height: 130px;
+        }
+
+        #loc {
+            font-size: 20px;
+            background-color: orange;
+            padding: 30px;
+            border-radius: 7px;
+        }
     </style>
 
     <!-- <nav id="navsub" class="d-flex justify-content-between d-lg-block">
@@ -152,7 +141,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto  mb-lg-0 ms-auto" style="column-gap: 20px; padding-left: 54%;">
                     <li class="nav-item" style="padding-left: 0%;">
-                        <a id="nav-link" class="nav-link active" aria-current="page" href="../about">About Us</a>
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a id="nav-link" class="nav-link" href="../course">Courses</a>
@@ -167,103 +156,58 @@
             </div>
         </div>
     </nav>
-    <h1 id="heding" class="text-center mb-5">Courses</h1>
+    <h1 id="heding" class="text-center mb-5">About Us</h1>
 
     <div class="container">
-        <div class="row">
-            <div class="col-lg-7 pr-lg-5">
-                <h3>{{ course.name }}</h3>
-                <p class="lead">{{ course.description|linebreaks }}</p>
-            </div>
-            <div class="col-lg-5 pl-lg-5 mb-5">
-                <img src="{{ course.img.url }}" id="courseimg" class="img-fluid mb-4" alt="{{ course.name }}">
-                <div class="enquire">
-                    <h4 id="enquireheading">Enquire</h4>
-                    <p class="enquire-text">
-                        Please fill out the form below and we will get <br>
-                        back to you shortly.
+        <h3 class="text-center mb-5">Our approach is very simple. We treat all the students equally. Ever
+            yone will get equal treatment and attention. Even if you are a fresher or an experienced candidate</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 pr-lg-5">
+                    <img src="{% static '/images/about.jpg' %}" id="courseimg" class="img-fluid mb-4"
+                        alt="{{ course.name }}">
+
+
+                </div>
+
+
+                <div class="col-lg-7 pl-lg-5 mb-5 p-5">
+                    <h3 class="mb-2 ">Who we are</h3>
+                    <p class="">Since our establishment in 2015, we have established ourselves as industry leaders by
+                        upholding high ethical standards, delivering top-notch training, and achieving impressive
+                        placement records. Our team of trainers boasts extensive real-world experience, ensuring that
+                        you receive in-depth knowledge and instruction in the latest technologies. We firmly believe
+                        that high-quality training coupled with real-world expe
+                        rience is crucial for students to become certified engineers. Our unwavering commitment is to
+                        prepare you to excel as a system engineer.
                     </p>
-                    <form>
-                        <div class="form-group mb-3">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="text" class="form-control" id="phone" placeholder="Phone">
-                        </div>
-                        <div class="form-group mb-3">
-                            <textarea class="form-control" id="message" placeholder="Message"></textarea>
-                        </div>
-                        <button type="submit" id="btn">Submit</button>
+
 
 
                 </div>
             </div>
-    </div>
-    </div>
 
-    <div class="container">
-        <h1 class="text-center">Placements</h1>
-        <p class="text-center">Congratulations to our successful students who have secured placements in top-notch companies!</p>
-        <div id="demo1" class="carousel slide mt-4" data-bs-ride="carousel">
 
-            <div class="carousel-inner mt-4 mb-5">
-                <div class="carousel-item active">
-                    <div class="featured-courses d-flex flex-wrap justify-content-center">
-                        {% for plac in placement %}
-                        <div id="card1" class="card text-center m-2" style="width: 100%; max-width: 300px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                            <div class="card-body">
-                                <div style="width: 80px; height: 80px; margin: 0 auto; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
-                                    <a href="{{ plac.profile_link|default:'#' }}" target="_blank"></a>
-                                </div>
-                                <h5 class="card-title text-black mt-3 mb-1" style="font-weight: bold;">{{ plac.name }}</h5>
-                                <p class="mb-2" style="color: gray;">{{ plac.designation }}</p>
-                                <hr style="border: 1px dashed #9a9a9a;">
-                                <p class="mb-0" style="font-weight: bold;">Placed in</p>
-                                <p style="font-weight: bold;">{{ plac.company|default:"" }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    
+            <div class="row">
+                <div class="col-lg-7 pl-lg-5 mb-5 p-5">
+                    <h3 class="mb-2 ">What we do</h3>
+                    <p class="">Our aim is to give students a comprehensive understanding of our courses and their
+                        practical applications, which is why we offer free workshops. To ensure the highest quality
+                        training, we have established affiliations with reputable organizations in systems
+                        administration and development. Our training infrastructure is designed in accordance with the
+                        latest corporate sector requirements. If you are considering any of our courses, you may have
+                        many questions and concerns, but our experienced faculty is dedicated to providing you with
+                        in-depth knowledge and addressing any doubts you may have.
+                    </p>
                 </div>
-                <div class="carousel-item">
-                    <div class="featured-courses d-flex flex-wrap justify-content-center">
-                        {% for plac in placement %}
-                        <div id="card1" class="card text-center m-2" style="width: 100%; max-width: 300px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                            <div class="card-body">
-                                <div style="width: 80px; height: 80px; margin: 0 auto; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
-                                    <a href="" ></a>
-                                </div>
-                                <h5 class="card-title text-black mt-3 mb-1" style="font-weight: bold;">{{ plac.name }}</h5>
-                                <p class="mb-2" style="color: gray;">{{ plac.designation }}</p>
-                                <hr style="border: 1px dashed #a3a2a2;">
-                                <p class="mb-0" style="font-weight: bold;">Placed in</p>
-                                <p style="font-weight: bold;">{{ plac.company|default:"" }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    
+                <div class="col-lg-5 pr-lg-5">
+                    <img src="{% static '/images/about1.jpg' %}" id="courseimg" class="img-fluid mb-4"
+                        alt="{{ course.name }}">
+
+
                 </div>
             </div>
-
-
-            <div id="maindot" class="carousel-indicators ">
-                <button type="button" id="dot" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
-                <button type="button" id="dot" data-bs-target="#demo1" data-bs-slide-to="1"></button>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
         </div>
-
     </div>
 
 
@@ -326,5 +270,10 @@
         </div>
     </footer>
 
+
+
+
+
 </body>
+
 </html>

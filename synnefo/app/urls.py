@@ -6,5 +6,6 @@ urlpatterns = [
     path('course',views.course),
     path('view_course/<id>',views.view_course),
     path('placement',views.placement),
-    
+    path('contact',views.contact),
+    path('about',views.about),    
 ]

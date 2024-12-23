@@ -93,7 +93,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto  mb-lg-0 ms-auto" style="column-gap: 20px; padding-left: 54%;">
                     <li class="nav-item" style="padding-left: 0%;">
-                        <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="../about">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a id="nav-link" class="nav-link" href="">Courses</a>
@@ -102,7 +102,7 @@
                         <a id="nav-link" class="nav-link" href="../placement">Placement</a>
                     </li>
                     <li class="nav-item">
-                        <a id="navlink3" class="nav-link" href="#">Contact Us</a>
+                        <a id="navlink3" class="nav-link" href="../contact">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -127,7 +127,64 @@
         {% endfor %}
     </div>
 </div>
+<footer style="background-color: #FFF5F0; padding: 40px 20px; font-family: Arial, sans-serif;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: 0 auto;">
+        <div style="flex: 1;">
+            <img id="footerlogo1" src="{% static '/images/synnefo-logo.png' %}" alt="Synnefo Solutions Logo" class="mt-5" style="margin-top: 100px;width: 250px;">
+        </div>
 
+        <div style="flex: 1;">
+            <h3 style="margin-bottom: 15px;">Quick Links</h3>
+            <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                <li><a href="#" style="text-decoration: none; color: #000;">Home</a></li>
+                <li><a href="#" style="text-decoration: none; color: #000;">About Us</a></li>
+                <li><a href="#" style="text-decoration: none; color: #000;">Courses</a></li>
+                <li><a href="#" style="text-decoration: none; color: #000;">Placements</a></li>
+                <li><a href="#" style="text-decoration: none; color: #000;">Blog</a></li>
+                <li><a href="#" style="text-decoration: none; color: #000;">Success Stories</a></li>
+                <li><a href="#" style="text-decoration: none; color: #000;">Careers</a></li>
+                <li><a href="#" style="text-decoration: none; color: #000;">Contact Us</a></li>
+                <li><a href="#" style="text-decoration: none; color: #000;">Company Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Popular Courses -->
+        <div style="flex: 1;">
+            <h3 style="margin-bottom: 15px;">Popular Courses</h3>
+            <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                <li>Advanced Diploma In Digital Marketing: AI Integrated</li>
+                <li>Full Stack Web Development: PHP</li>
+                <li>VMware vSphere</li>
+                <li>Cisco Certified Network Associate</li>
+                <li>CompTIA A+</li>
+                <li>Mobile Application Development: Flutter</li>
+                <li>Master in DevOps</li>
+                <li>MERN Stack</li>
+                <li>UI/UX</li>
+                <li>Advanced Diploma In Cyber Security</li>
+            </ul>
+        </div>
+
+        <!-- Get in Touch -->
+        <div style="flex: 1;">
+            <h3 style="margin-bottom: 15px;">Get in Touch</h3>
+            <p style="margin: 0;">2nd Floor, Aswathi Building Above SBI,<br> Iyyattil Junction, Ernakulam,<br> Kerala 682011</p>
+            <p style="margin: 15px 0 5px;">+91 7736013410<br>+91 7736013411</p>
+            <p><a href="mailto:info@synnefo.in" style="text-decoration: none; color: #000;">info@synnefo.in</a></p>
+            <div style="margin-top: 15px;">
+                <a href="#" style="margin-right: 10px; text-decoration: none; color: #000;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="margin-right: 10px; text-decoration: none; color: #000;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="margin-right: 10px; text-decoration: none; color: #000;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="margin-right: 10px; text-decoration: none; color: #000;"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; font-size: 14px; color: #000;">
+        <p style="margin: 0;">Copyright © 2024 Synnefo Solutions. All rights reserved.</p>
+        <p style="margin: 5px 0;"><a href="#" style="text-decoration: none; color: #000;">Privacy Policy</a> | <a href="#" style="text-decoration: none; color: #000;">Terms & Conditions</a></p>
+    </div>
+</footer>
 </body>
 
 </html>
